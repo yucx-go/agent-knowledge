@@ -48,8 +48,10 @@ MCP-aware client config. Full tool list is in
 
 ### Option 2: CLI
 
+`compiled-memory` is the PyPI distribution; `agent_knowledge` is the Python module.
+
 ```bash
-pip install agent-knowledge
+pip install compiled-memory
 ak init   /path/to/vault
 ak ingest /path/to/vault --file notes.md
 ak query  /path/to/vault "why did we pick React?"

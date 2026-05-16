@@ -1,7 +1,7 @@
 # agent-knowledge
 
-[![PyPI](https://img.shields.io/pypi/v/agent-knowledge.svg)](https://pypi.org/project/agent-knowledge/)
-[![Python](https://img.shields.io/pypi/pyversions/agent-knowledge.svg)](https://pypi.org/project/agent-knowledge/)
+[![PyPI](https://img.shields.io/pypi/v/compiled-memory.svg)](https://pypi.org/project/compiled-memory/)
+[![Python](https://img.shields.io/pypi/pyversions/compiled-memory.svg)](https://pypi.org/project/compiled-memory/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/yucx-go/agent-knowledge/actions/workflows/ci.yml/badge.svg)](https://github.com/yucx-go/agent-knowledge/actions/workflows/ci.yml)
 [![MCP](https://img.shields.io/badge/MCP-compatible-blue.svg)](docs/mcp-integration.md)
@@ -66,7 +66,7 @@ The agent now sees **the current fact, the timeline, the sources, and the supers
 ## Quick Start
 
 ```bash
-pip install agent-knowledge
+pip install compiled-memory   # PyPI package; the Python module is `agent_knowledge`
 
 ak init   ~/my-knowledge
 ak ingest ~/my-knowledge --file ./meeting-notes.md

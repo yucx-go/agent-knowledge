@@ -204,7 +204,7 @@ that's fine — most queries are about old knowledge.
 
 We chose not to bundle `jieba` / `spacy` / NER models because:
 
-- `pip install agent-knowledge` is one line and only pulls `pyyaml`.
+- `pip install compiled-memory` is one line and only pulls `pyyaml`.
   Adding tokenizers (4 MB) or NER models (50 MB+ per language) makes
   the install 10–50× larger.
 - Reverse-filter stopword segmentation captures ~80% of meaningful

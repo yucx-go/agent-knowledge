@@ -10,7 +10,7 @@ Drop-in config snippets for popular MCP-aware clients.
 
 Steps:
 
-1. `pip install agent-knowledge`
+1. `pip install compiled-memory`
 2. `ak init /absolute/path/to/vault`
 3. Copy the snippet above into your client's config, replace the vault path
 4. Restart the client
