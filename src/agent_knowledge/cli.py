@@ -188,10 +188,43 @@ def cmd_batch_ingest(args: argparse.Namespace) -> None:
     print(f"\n📊 Done: {success} ingested, {errors} failed")
 
 
+def _default_vault_path() -> str:
+    """Return ``~/.agent-knowledge/vault`` (created if missing).
+
+    Used when ``ak mcp`` / the ``compiled-memory-mcp`` entry point is
+    invoked without an explicit path — gives MCP clients a working
+    default without forcing every user to think about where to store
+    their knowledge before they can try the server.
+    """
+    default = Path.home() / ".agent-knowledge" / "vault"
+    default.mkdir(parents=True, exist_ok=True)
+    return str(default)
+
+
 def cmd_mcp(args: argparse.Namespace) -> None:
     from .adapters.mcp import run_stdio
 
-    run_stdio(args.vault_path)
+    run_stdio(args.vault_path or _default_vault_path())
+
+
+def mcp_entry() -> None:
+    """Console-script entry point for ``compiled-memory-mcp``.
+
+    Bypasses argparse so that MCP clients can spawn the server with a
+    single command (``compiled-memory-mcp``) — vault path is taken from
+    ``$AGENT_KNOWLEDGE_VAULT`` or the first positional argument, falling
+    back to ``~/.agent-knowledge/vault``.
+    """
+    import os
+
+    from .adapters.mcp import run_stdio
+
+    vault_path = (
+        (sys.argv[1] if len(sys.argv) > 1 else None)
+        or os.environ.get("AGENT_KNOWLEDGE_VAULT")
+        or _default_vault_path()
+    )
+    run_stdio(vault_path)
 
 
 def cmd_hooks(args: argparse.Namespace) -> None:
@@ -454,7 +487,12 @@ def main() -> None:
 
     # mcp
     p_mcp = sub.add_parser("mcp", help="Start MCP server (JSON-RPC over stdio)")
-    p_mcp.add_argument("vault_path", help="Vault path")
+    p_mcp.add_argument(
+        "vault_path",
+        nargs="?",
+        default=None,
+        help="Vault path (default: ~/.agent-knowledge/vault)",
+    )
 
     # hooks
     p_hooks = sub.add_parser("hooks", help="Manage auto-capture hooks")

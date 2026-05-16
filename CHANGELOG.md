@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.1] - 2026-05-17
+
+### Added
+
+- **`compiled-memory-mcp` / `agent-knowledge-mcp` console scripts** —
+  single-command entry points for MCP clients; no `ak mcp` subcommand
+  needed.
+- **Default vault path** — `ak mcp` and the new entry points fall back
+  to `~/.agent-knowledge/vault` (auto-created) when no path is given;
+  also honours `$AGENT_KNOWLEDGE_VAULT`.
+- **`Dockerfile`** — multi-stage Python 3.11-slim image that exposes
+  `compiled-memory-mcp` as the entrypoint. Vault persisted at
+  `/data/vault` via volume. For MCP discovery platforms (Glama,
+  Smithery, …).
+
+### Changed
+
+- `ak mcp <vault_path>` — `vault_path` is now optional (was required).
+
 ## [0.3.0] - 2026-05-16
 
 ### Added

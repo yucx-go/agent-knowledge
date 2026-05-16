@@ -308,7 +308,9 @@ class TestCapabilities:
         assert "prompts" in caps
         assert "tools" in caps
 
-    def test_version_is_020(self, clean_vault):
+    def test_version_matches_package(self, clean_vault):
+        from agent_knowledge import __version__
+
         server = MCPServer(clean_vault)
         resp = _call(server, "initialize", {"protocolVersion": MCP_PROTOCOL_VERSION})
-        assert resp["result"]["serverInfo"]["version"] == "0.3.0"
+        assert resp["result"]["serverInfo"]["version"] == __version__

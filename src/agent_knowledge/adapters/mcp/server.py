@@ -109,7 +109,7 @@ class MCPServer:
             },
             "serverInfo": {
                 "name": "agent-knowledge",
-                "version": "0.3.0",
+                "version": "0.3.1",
             },
         }
 
