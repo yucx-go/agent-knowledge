@@ -8,6 +8,7 @@ version = "0.3.0"
 description = "AI agent knowledge & long-term memory — MCP server, knowledge graph, BM25 + RRF retrieval, contradiction detection. Drop-in for Claude Code / Cursor / Codex."
 readme = "README.md"
 license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [
     { name = "Yu Chengxin", email = "285227592+yucx-go@users.noreply.github.com" },
@@ -37,7 +38,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
