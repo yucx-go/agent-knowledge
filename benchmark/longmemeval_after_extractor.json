@@ -1,0 +1,124 @@
+{
+  "overall": {
+    "total": 500,
+    "hits_at": {
+      "5": 483,
+      "10": 491,
+      "20": 497
+    },
+    "recall_at": {
+      "5": 0.966,
+      "10": 0.982,
+      "20": 0.994
+    },
+    "mrr": 0.9031,
+    "ndcg@10": 0.9218,
+    "avg_latency_s": 0.01,
+    "wall_time_s": 217.3
+  },
+  "per_type": {
+    "knowledge-update": {
+      "total": 78,
+      "hits_at": {
+        "5": 78,
+        "10": 78,
+        "20": 78
+      },
+      "recall_at": {
+        "5": 1.0,
+        "10": 1.0,
+        "20": 1.0
+      },
+      "mrr": 0.9712,
+      "ndcg@10": 0.9785,
+      "avg_latency_s": 0.009
+    },
+    "multi-session": {
+      "total": 133,
+      "hits_at": {
+        "5": 130,
+        "10": 131,
+        "20": 132
+      },
+      "recall_at": {
+        "5": 0.9774,
+        "10": 0.985,
+        "20": 0.9925
+      },
+      "mrr": 0.9002,
+      "ndcg@10": 0.9206,
+      "avg_latency_s": 0.009
+    },
+    "single-session-assistant": {
+      "total": 56,
+      "hits_at": {
+        "5": 56,
+        "10": 56,
+        "20": 56
+      },
+      "recall_at": {
+        "5": 1.0,
+        "10": 1.0,
+        "20": 1.0
+      },
+      "mrr": 0.9911,
+      "ndcg@10": 0.9934,
+      "avg_latency_s": 0.015
+    },
+    "single-session-preference": {
+      "total": 30,
+      "hits_at": {
+        "5": 26,
+        "10": 27,
+        "20": 30
+      },
+      "recall_at": {
+        "5": 0.8667,
+        "10": 0.9,
+        "20": 1.0
+      },
+      "mrr": 0.5827,
+      "ndcg@10": 0.655,
+      "avg_latency_s": 0.01
+    },
+    "single-session-user": {
+      "total": 70,
+      "hits_at": {
+        "5": 68,
+        "10": 70,
+        "20": 70
+      },
+      "recall_at": {
+        "5": 0.9714,
+        "10": 1.0,
+        "20": 1.0
+      },
+      "mrr": 0.9332,
+      "ndcg@10": 0.9492,
+      "avg_latency_s": 0.008
+    },
+    "temporal-reasoning": {
+      "total": 133,
+      "hits_at": {
+        "5": 125,
+        "10": 129,
+        "20": 131
+      },
+      "recall_at": {
+        "5": 0.9398,
+        "10": 0.9699,
+        "20": 0.985
+      },
+      "mrr": 0.8856,
+      "ndcg@10": 0.9052,
+      "avg_latency_s": 0.01
+    }
+  },
+  "config": {
+    "top_k": 20,
+    "workers": 1,
+    "sample_n": null,
+    "enable_facts": false,
+    "search_engine": "BM25+Exact+RRF (no vector, no graph, no reranker)"
+  }
+}

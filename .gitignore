@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vault test data (don't commit test vaults)
+/tmp/
+
+# Benchmark data (large datasets, download separately)
+benchmark/data/*.json
+
+# Benchmark verbose dumps — regenerate via longmemeval_benchmark.py /
+# analyze_failures.py. Aggregate metric files (e.g.
+# longmemeval_after_extractor.json) are checked in.
+benchmark/all_results.json
+benchmark/failures_top*.json
+benchmark/longmemeval_sample*.json
+benchmark/longmemeval_test_results*.json
+benchmark/longmemeval_full_results*.json

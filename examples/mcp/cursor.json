@@ -1,0 +1,9 @@
+{
+  "_comment": "Drop into .cursor/mcp.json (project) or ~/.cursor/mcp.json (global). Replace the vault path.",
+  "mcpServers": {
+    "agent-knowledge": {
+      "command": "ak",
+      "args": ["mcp", "/absolute/path/to/your/vault"]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Codex (~/.codex/config.toml) — replace the vault path.
+[mcp_servers.agent-knowledge]
+command = "ak"
+args = ["mcp", "/absolute/path/to/your/vault"]

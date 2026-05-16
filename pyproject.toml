@@ -1,0 +1,88 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-knowledge"
+version = "0.3.0"
+description = "AI agent knowledge & long-term memory — MCP server, knowledge graph, BM25 + RRF retrieval, contradiction detection. Drop-in for Claude Code / Cursor / Codex."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Yu Chengxin", email = "285227592+yucx-go@users.noreply.github.com" },
+]
+keywords = [
+    "ai",
+    "agent",
+    "ai-agent",
+    "llm",
+    "memory",
+    "long-term-memory",
+    "knowledge-base",
+    "knowledge-graph",
+    "rag",
+    "retrieval",
+    "bm25",
+    "mcp",
+    "model-context-protocol",
+    "claude-code",
+    "cursor",
+    "codex",
+    "compiled-truth",
+    "contradiction-detection",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Indexing",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+semantic = [
+    "sentence-transformers>=2.0",
+]
+feishu = []
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[project.scripts]
+ak = "agent_knowledge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yucx-go/agent-knowledge"
+Repository = "https://github.com/yucx-go/agent-knowledge"
+Documentation = "https://github.com/yucx-go/agent-knowledge/tree/main/docs"
+"Issue Tracker" = "https://github.com/yucx-go/agent-knowledge/issues"
+Changelog = "https://github.com/yucx-go/agent-knowledge/blob/main/CHANGELOG.md"
+"MCP Integration" = "https://github.com/yucx-go/agent-knowledge/blob/main/docs/mcp-integration.md"
+Benchmark = "https://github.com/yucx-go/agent-knowledge/blob/main/BENCHMARK.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_knowledge"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/agent_knowledge/py.typed" = "agent_knowledge/py.typed"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

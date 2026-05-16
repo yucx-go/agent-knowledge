@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "agent-knowledge: AI Agent Knowledge Management System"
+message: "If you use this software in research, please cite it as below."
+type: software
+authors:
+  - family-names: "Yu"
+    given-names: "Chengxin"
+    email: "285227592+yucx-go@users.noreply.github.com"
+repository-code: "https://github.com/yucx-go/agent-knowledge"
+url: "https://github.com/yucx-go/agent-knowledge"
+license: MIT
+version: "0.3.0"
+date-released: "2026-05-16"
+keywords:
+  - ai-agent
+  - long-term-memory
+  - knowledge-graph
+  - retrieval-augmented-generation
+  - mcp
+  - bm25
+abstract: >-
+  agent-knowledge compiles raw agent conversations and documents into a
+  structured knowledge base with source provenance, confidence tracking,
+  append-only timelines, and contradiction detection. It ships a Model
+  Context Protocol (MCP) server for drop-in integration with AI coding
+  agents, and provides a zero-dependency retrieval stack combining
+  exact match, BM25, knowledge graph traversal, and RRF fusion.

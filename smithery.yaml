@@ -1,0 +1,16 @@
+# Smithery MCP registry manifest.
+# https://smithery.ai/docs
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: ["vaultPath"]
+    properties:
+      vaultPath:
+        type: string
+        description: "Absolute path to the agent-knowledge vault directory. Will be auto-initialized if it doesn't exist."
+  commandFunction: |
+    (config) => ({
+      command: "ak",
+      args: ["mcp", config.vaultPath]
+    })

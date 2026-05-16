@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question / Discussion
+    url: https://github.com/yucx-go/agent-knowledge/discussions
+    about: Ask usage questions, share ideas, or discuss design.
+  - name: MCP integration help
+    url: https://github.com/yucx-go/agent-knowledge/blob/main/docs/mcp-integration.md
+    about: Setup guide for Claude Code / Cursor / Codex.

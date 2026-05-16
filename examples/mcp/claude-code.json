@@ -1,0 +1,9 @@
+{
+  "_comment": "Drop into ~/.claude/settings.json or .claude/settings.json (project-local). Replace the vault path.",
+  "mcpServers": {
+    "agent-knowledge": {
+      "command": "ak",
+      "args": ["mcp", "/absolute/path/to/your/vault"]
+    }
+  }
+}
